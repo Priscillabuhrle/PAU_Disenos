@@ -1,0 +1,116 @@
+.cabecera{
+    height: 50px;
+    background-color: #9a3cdd;
+}
+
+.seccion1{
+    background-image: url(../img/textura2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 160px;
+}
+
+/* Definición de la animación */
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Aplicación de la animación a la imagen */
+.logoCabecera {
+    width: 200px;
+    border-radius: 50%;
+    margin-top: 28px;
+    border: 3px solid white;
+    animation: girar 1s linear; /* Duración y efecto de la animación */
+}
+
+
+.tit{
+    font-size: 19px;
+    padding-top: 90px;
+    color: #434344;
+}
+
+.linea{
+    width: 85%;
+    color: #ec668b;
+    border-width: 2px; 
+    margin-top: -5px;
+    margin-bottom: 40px;
+}
+
+
+
+.iconoCuerpo {
+    color: white; 
+    background-color: #660099;
+    padding-top: 14px;
+    border-radius: 50%; /* Cambiamos el valor a 50% para hacer un círculo */
+    font-size: 25px;
+    width: 55px; /* Establecemos el ancho y el alto iguales */
+    height: 55px;
+    text-align: center; /* Opcional: centraremos el contenido del círculo */
+    line-height: 100px; /* Opcional: centraremos verticalmente el contenido */
+    
+}
+
+.textIcono{
+    font-weight: 700;
+    color: #9a3cdd;
+    font-size: 13px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+footer{
+    background-color: #434344;
+    height: 50px;
+    margin-top: 15px;
+    padding-top: 8px;
+}
+
+.footerEstrella{
+    color: white;
+    font-size: 23px;
+}
+
+.footerCompartir{
+    color: white;
+    font-size: 23px;
+    padding-right: 10px;
+}
+
+span{
+    color: white;
+    padding-right: 3px;
+    font-size: 15px;
+    
+}
+
+
+
+
+.iconfot{
+    color: #9a3cdd;
+    font-size: 23px;
+    margin-right: 3px;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+#redesSocialesIcons{
+    margin-right: 0px;
+    margin-top: -75px;
+    font-size: 20px;
+}
+
+
+
+
+
