@@ -123,3 +123,6 @@ function copiarAlPortapapeles() {
 
 favoritoIcon.addEventListener('click', copiarAlPortapapeles);
 
+//
+///
+

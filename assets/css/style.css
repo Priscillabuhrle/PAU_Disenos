@@ -39,7 +39,7 @@
 .linea{
     width: 85%;
     color: #ec668b;
-    border-width: 2px; 
+    border-width: 3px; 
     margin-top: -5px;
     margin-bottom: 40px;
 }
@@ -56,7 +56,7 @@
     height: 55px;
     text-align: center; /* Opcional: centraremos el contenido del círculo */
     line-height: 100px; /* Opcional: centraremos verticalmente el contenido */
-    box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.7);
     
 }
 
@@ -113,5 +113,19 @@ span{
 
 
 
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    padding-top: 30px; /* Opcional, para dar espacio encima del video */
+    height: 0;
+    overflow: hidden;
+}
 
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
