@@ -56,6 +56,7 @@
     height: 55px;
     text-align: center; /* Opcional: centraremos el contenido del círculo */
     line-height: 100px; /* Opcional: centraremos verticalmente el contenido */
+    box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.5);
     
 }
 

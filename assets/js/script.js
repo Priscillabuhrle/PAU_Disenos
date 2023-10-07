@@ -1,6 +1,6 @@
 // guardar en favoritos
 
-// Código para guardar en favoritos
+/*Código para guardar en favoritos
 const favoritoIcon = document.getElementById('favoritoIcon');
 const favoritoLabel = document.getElementById('favoritoLabel');
 
@@ -24,7 +24,7 @@ function toggleBookmark() {
     }
 }
 
-favoritoIcon.addEventListener('click', toggleBookmark);
+favoritoIcon.addEventListener('click', toggleBookmark);*/
 
 
 //
@@ -85,4 +85,41 @@ function compartirEnRedSocial(redSocial) {
             console.log('Red social no reconocida');
     }
 }
+
+const favoritoIcon = document.getElementById('favoritoIcon');
+
+function copiarAlPortapapeles() {
+    // Crea un elemento de entrada de texto temporal
+    const input = document.createElement('input');
+    input.setAttribute('value', 'https://priscillabuhrle.github.io/PAU_Disenos/');
+    
+    // Agrega el elemento de entrada de texto al documento
+    document.body.appendChild(input);
+    
+    // Selecciona el contenido del elemento de entrada de texto
+    input.select();
+    
+    // Copia el contenido seleccionado al portapapeles
+    document.execCommand('copy');
+    
+    // Elimina el elemento de entrada de texto temporal
+    document.body.removeChild(input);
+
+    // Cambia el texto del span para indicar que se ha copiado
+    const favoritoLabel = document.getElementById('favoritoLabel');
+    favoritoLabel.textContent = 'Link Copiado';
+    
+    // Cambia el icono para proporcionar retroalimentación visual
+    favoritoIcon.classList.remove('fa-regular', 'fa-copy');
+    favoritoIcon.classList.add('fa-solid', 'fa-check');
+    
+    // Restaura el estado original después de un tiempo
+    setTimeout(function () {
+        favoritoLabel.textContent = 'Copiar Link';
+        favoritoIcon.classList.remove('fa-solid', 'fa-check');
+        favoritoIcon.classList.add('fa-regular', 'fa-copy');
+    }, 3000); // Cambios de vuelta después de 2 segundos
+}
+
+favoritoIcon.addEventListener('click', copiarAlPortapapeles);
 
