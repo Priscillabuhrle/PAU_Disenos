@@ -131,16 +131,23 @@ favoritoIcon.addEventListener('click', copiarAlPortapapeles);
 
 const logoImage = document.getElementById('logoImage');
 
-// Agrega la clase 'animacion' para iniciar la animación al cargar la página
-logoImage.classList.add('animacion');
+// Función para iniciar la animación
+function iniciarAnimacion() {
+    logoImage.classList.add('animacion');
+}
+
+// Agrega un controlador de eventos al cargar la página
+window.addEventListener('load', iniciarAnimacion);
 
 // Agrega un controlador de eventos al hacer clic en la imagen
 logoImage.addEventListener('click', () => {
-    // Agrega o quita la clase 'animacion' para iniciar o detener la animación
-    if (logoImage.classList.contains('animacion')) {
-        logoImage.classList.remove('animacion');
-    } else {
-        logoImage.classList.add('animacion');
-    }
+    // Reinicia la animación al hacer clic
+    logoImage.classList.remove('animacion');
+    void logoImage.offsetWidth; // Esto fuerza un reinicio de la animación
+    logoImage.classList.add('animacion');
 });
+
+
+
+
 
