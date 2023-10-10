@@ -126,3 +126,21 @@ favoritoIcon.addEventListener('click', copiarAlPortapapeles);
 //
 ///
 
+// animacion logo
+// Obtiene la referencia a la imagen por su ID
+
+const logoImage = document.getElementById('logoImage');
+
+// Agrega la clase 'animacion' para iniciar la animación al cargar la página
+logoImage.classList.add('animacion');
+
+// Agrega un controlador de eventos al hacer clic en la imagen
+logoImage.addEventListener('click', () => {
+    // Agrega o quita la clase 'animacion' para iniciar o detener la animación
+    if (logoImage.classList.contains('animacion')) {
+        logoImage.classList.remove('animacion');
+    } else {
+        logoImage.classList.add('animacion');
+    }
+});
+

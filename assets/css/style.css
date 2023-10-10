@@ -26,9 +26,11 @@
     border-radius: 50%;
     margin-top: 0px;
     border: 3px solid white;
-    animation: girar 1s linear; /* Duración y efecto de la animación */
+    /*animation: girar 1s linear; /* Duración y efecto de la animación */
 }
-
+.animacion {
+    animation: girar 1s linear;
+}
 
 .tit{
     font-size: 19px;
