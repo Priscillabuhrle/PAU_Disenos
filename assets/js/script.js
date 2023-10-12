@@ -1,33 +1,4 @@
-// guardar en favoritos
 
-/*Código para guardar en favoritos
-const favoritoIcon = document.getElementById('favoritoIcon');
-const favoritoLabel = document.getElementById('favoritoLabel');
-
-function toggleBookmark() {
-    if (document.execCommand) {
-        try {
-            document.execCommand('AddBookmark', false, document.title, window.location.href);
-            favoritoLabel.textContent = 'Favorito (Guardado)';
-            favoritoIcon.classList.remove('fa-regular', 'fa-star');
-            favoritoIcon.classList.add('fa-solid', 'fa-star');
-        } catch (err) {
-            console.error('No se pudo agregar a marcadores:', err);
-        }
-    } else if (window.sidebar && window.sidebar.addPanel) {
-        window.sidebar.addPanel(document.title, window.location.href, '');
-        favoritoLabel.textContent = 'Favorito (Guardado)';
-        favoritoIcon.classList.remove('fa-regular', 'fa-star');
-        favoritoIcon.classList.add('fa-solid', 'fa-star');
-    } else {
-        alert('Tu navegador no admite la función de agregar a marcadores. Por favor, utilice la opción de marcadores de su navegador para guardar esta página.');
-    }
-}
-
-favoritoIcon.addEventListener('click', toggleBookmark);*/
-
-
-//
 //
 
 const compartirIcon = document.getElementById('compartirIcon');
@@ -122,9 +93,6 @@ function copiarAlPortapapeles() {
 }
 
 favoritoIcon.addEventListener('click', copiarAlPortapapeles);
-
-//
-///
 
 // animacion logo
 // Obtiene la referencia a la imagen por su ID

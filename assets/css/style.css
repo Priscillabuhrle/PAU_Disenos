@@ -149,3 +149,15 @@ span{
     display: block; /* Evita que la imagen se superponga a otras */
     margin-top: -40px !important;
 }
+
+@media (min-width: 1000px) {
+    body{
+        padding: 0 250px 0 250px;
+    }
+}
+
+@media (orientation: landscape) {
+    body{
+        padding: 0 200px 0 200px;
+    }
+}
