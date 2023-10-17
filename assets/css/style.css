@@ -95,8 +95,16 @@ span{
 
 .iconfot{
     color:white;
-    font-size: 33px;
-    margin-right: 6px;
+    font-size: 29px;
+    margin-right: 4px;
+    position: relative;
+    z-index: 2;
+    
+}
+.iconfot1{
+    color:white;
+    font-size: 29px;
+    margin-right: -2px;
     position: relative;
     z-index: 2;
     

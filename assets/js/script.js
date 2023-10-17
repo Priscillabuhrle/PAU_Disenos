@@ -2,70 +2,8 @@
 //
 
 const compartirIcon = document.getElementById('compartirIcon');
-const redesSocialesIcons = document.getElementById('redesSocialesIcons');
-
-// Oculta las redes sociales al cargar la página
-redesSocialesIcons.style.display = 'none';
 
 compartirIcon.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (redesSocialesIcons.style.display === 'block') {
-        redesSocialesIcons.style.display = 'none';
-    } else {
-        redesSocialesIcons.style.display = 'block';
-    }
-});
-
-const redesSocialesIconos = document.querySelectorAll('.redesSocialesIcon');
-redesSocialesIconos.forEach(function (icon) {
-    icon.addEventListener('click', function (event) {
-        event.preventDefault();
-        const redSocial = icon.classList.contains('facebook') ? 'Facebook' :
-            icon.classList.contains('instagram') ? 'Instagram' :
-            icon.classList.contains('linkedin') ? 'LinkedIn' :
-            icon.classList.contains('whatsapp') ? 'WhatsApp' :
-            icon.classList.contains('twitter') ? 'Twitter' :
-            'Otra Red Social'; // Personaliza esto para cada red social que agregues
-        compartirEnRedSocial(redSocial);
-    });
-});
-
-function compartirEnRedSocial(redSocial) {
-    const url = window.location.href;
-    const titulo = document.title;
-
-    switch (redSocial) {
-        case 'Facebook':
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-            break;
-        case 'Instagram':
-            // Agrega aquí la lógica para compartir en Instagram
-            // No se puede compartir directamente desde un navegador, generalmente se usa la aplicación móvil.
-            //window.location.href = `instagram://library?AssetPath=${encodeURIComponent(imagenURL)}&InstagramCaption=${encodeURIComponent(descripcion)}`;
-            break;
-        case 'LinkedIn':
-            window.open(`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}&title=${encodeURIComponent(titulo)}`, '_blank');
-            break;
-        case 'WhatsApp':
-            // Puedes utilizar el enlace de WhatsApp para compartir el enlace actual
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`, '_blank');
-            break;
-        case 'Twitter':
-            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(titulo)}`, '_blank');
-            break; 
-        
-        default:
-            console.log('Red social no reconocida');
-    }
-}
-
-const favoritoIcon = document.getElementById('favoritoIcon');
-
-//mmm
-//mmm
-const smsIcon = document.querySelector('.sms'); // Selecciona el ícono de SMS
-
-smsIcon.addEventListener('click', function (event) {
     event.preventDefault();
     compartirPorSMS();
 });
@@ -87,24 +25,6 @@ function compartirPorSMS() {
         // Si el navegador no admite la API de Web Share, abre un enlace de SMS
         window.open(`sms:?body=${encodeURIComponent(mensaje)}`, '_blank');
     }
-}
-
-
-//mmm
-const facebookMessengerIcon = document.querySelector('.facebook-messenger'); // Selecciona el ícono de Facebook Messenger
-
-facebookMessengerIcon.addEventListener('click', function (event) {
-    event.preventDefault();
-    compartirPorFacebookMessenger();
-});
-
-function compartirPorFacebookMessenger() {
-    const url = window.location.href;
-    const titulo = document.title;
-    const mensaje = 'Echa un vistazo a este enlace: ' + url;
-
-    // Abre la página de compartir de Facebook Messenger con el mensaje y la URL
-    window.open(`fb-messenger://share?link=${encodeURIComponent(url)}&app_id=123456789&text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
 
