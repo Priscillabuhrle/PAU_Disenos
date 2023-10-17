@@ -41,6 +41,7 @@ function compartirEnRedSocial(redSocial) {
         case 'Instagram':
             // Agrega aquí la lógica para compartir en Instagram
             // No se puede compartir directamente desde un navegador, generalmente se usa la aplicación móvil.
+            //window.location.href = `instagram://library?AssetPath=${encodeURIComponent(imagenURL)}&InstagramCaption=${encodeURIComponent(descripcion)}`;
             break;
         case 'LinkedIn':
             window.open(`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}&title=${encodeURIComponent(titulo)}`, '_blank');
@@ -51,7 +52,8 @@ function compartirEnRedSocial(redSocial) {
             break;
         case 'Twitter':
             window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(titulo)}`, '_blank');
-            break;
+            break; 
+        
         default:
             console.log('Red social no reconocida');
     }
@@ -59,6 +61,54 @@ function compartirEnRedSocial(redSocial) {
 
 const favoritoIcon = document.getElementById('favoritoIcon');
 
+//mmm
+//mmm
+const smsIcon = document.querySelector('.sms'); // Selecciona el ícono de SMS
+
+smsIcon.addEventListener('click', function (event) {
+    event.preventDefault();
+    compartirPorSMS();
+});
+
+function compartirPorSMS() {
+    const url = window.location.href;
+    const mensaje = 'Echa un vistazo a este enlace: ' + url;
+
+    if ('share' in navigator) {
+        // Si el navegador admite la API de Web Share, úsala
+        navigator.share({
+            title: document.title,
+            text: mensaje,
+            url: url,
+        })
+        .then(() => console.log('Enlace compartido con éxito'))
+        .catch(error => console.error('Error al compartir: ', error));
+    } else {
+        // Si el navegador no admite la API de Web Share, abre un enlace de SMS
+        window.open(`sms:?body=${encodeURIComponent(mensaje)}`, '_blank');
+    }
+}
+
+
+//mmm
+const facebookMessengerIcon = document.querySelector('.facebook-messenger'); // Selecciona el ícono de Facebook Messenger
+
+facebookMessengerIcon.addEventListener('click', function (event) {
+    event.preventDefault();
+    compartirPorFacebookMessenger();
+});
+
+function compartirPorFacebookMessenger() {
+    const url = window.location.href;
+    const titulo = document.title;
+    const mensaje = 'Echa un vistazo a este enlace: ' + url;
+
+    // Abre la página de compartir de Facebook Messenger con el mensaje y la URL
+    window.open(`fb-messenger://share?link=${encodeURIComponent(url)}&app_id=123456789&text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+
+//mmm
 function copiarAlPortapapeles() {
     // Crea un elemento de entrada de texto temporal
     const input = document.createElement('input');
