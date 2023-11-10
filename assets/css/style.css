@@ -134,6 +134,28 @@ span{
     height: 100%;
 }
 
+
+.boton-verde{
+    text-decoration: none;
+    background-color:#eb668b;
+    
+    color: white;
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 7px;
+    box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    
+   
+}
+
+.grupow{
+    padding-left: 5px;
+    font-size: 20px;
+   
+}
+
+
 .qr{
    width: 170px !important;
 
